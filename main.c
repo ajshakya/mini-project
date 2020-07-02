@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<conio.h>
 char admt(){
 int age;
 char b[20],address[20];
@@ -27,7 +26,7 @@ case 4:
     printf("4st case");
     break;
 default:
-    printf("errroasdfasdfasdfr");
+    printf("errror");
     }
 }
 void main(){
