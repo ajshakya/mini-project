@@ -1,52 +1,48 @@
 #include<stdio.h>
 #include<conio.h>
+#include <stdlib.h>
+struct patient {
+char name[25];
+char address[20];
+char problem[10];
+char age[3];
+char phone[10];
+};
+int inp(){ //admit section
+FILE *fp ;
+struct patient p[10];
+int i,a;
+fp = fopen("test.txt", "a+") ;
+for(i=0;i<1;i++){
+            printf("enter your name : ");
+            scanf("%s",&p[i].name);
+                    printf("enter your address : ");
+                    scanf("%s",&p[i].address);
+                        printf("enter your problem : ");
+                        scanf("%s",&p[i].problem);
+                                printf("enter your age : ");
+                                scanf("%s",&p[i].age);
 
-int ad(){ //admit/discharge section
-int z,x;
-printf("\n \n \t \t \t \t Do you want to Admit or Discharge a Patient ? \n \n");
-printf("\t \t \t \t 1. Admit \t \t \t 2.Discharge \n \n");
-printf("\t \t \t \t \t  Enter your choice :- ");
-scanf("%d",&z);
-if(z==1){ //admit section
-        char name[30],address[30],blood;
-        int age,adts, d1, d2, m1, m2, year;;
-//        printf("enter patients name = ");
-//        scanf("%s",&name);
-//        printf("enter patients address = ");
-//        scanf("%s",&address);
-        printf("enter patients age = ");
-        scanf("%d",&age);
-//        printf("enter patients blood group = ");
-//        scanf("%s",&blood);
-        printf("enter patients admitting sector \n");
-        printf("1. Neuro \t 2. Cardio \t 3.Ortho \n");
-        scanf("%d",&adts);
-        if(adts==1){
-            adts="Neuro";
-        }
-        if(adts==2){
-            adts="Cardio";
-        }
-        if(adts==3){
-            adts="Ortho";
-        }
-        printf("admitting date (dd/mm/yy): ");
-        scanf("%d,%d/%d,&,d/%d", &d1,&d2,&m1,&m2,&year);
+                    fputs(" Name : ",fp);
+                    fputs(p[i].name,fp);
+                        fputs("\t address : ",fp);
+                        fputs(p[i].address,fp);
+                            fputs("\t problem : ",fp);
+                            fputs(p[i].problem,fp);
+                                fputs("\t age : ",fp);
+                                fputs(p[i].age,fp);
+                                    fputs("\n",fp);
+                    fclose(fp);
+                    system("cls");
+                    a=main();
+}
 
 }
-else if(z==2){ //discharge section
-    printf("z is 2");
-}
-else{
-    printf("\n \t \t     Please enter (1) for admitting a patient and (2) for discharging a patient !");
-
-    x=ad();
-}}
 int s(int n){ //selects option
     int a;
     switch(n){
 case 1:
-    a = ad();
+    a = inp();
     break;
 case 2:
     printf("2st case");
